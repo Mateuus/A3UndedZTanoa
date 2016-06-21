@@ -4,6 +4,10 @@ class Mission
 	addOns[]=
 	{
 		"exile_client",
+		"Ryanzombies",
+		"ryanzombiesfunctions",
+		"Ryanzombiesanims",
+		"Ryanzombiesfaces",
 		"a3_data_f_exp",
 		"A3_Modules_F_Curator_Curator",
 		"A3_Structures_F_Exp_Military_Fortifications",
