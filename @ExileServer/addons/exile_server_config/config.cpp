@@ -4101,7 +4101,7 @@ class CfgSettings
 		*/
 
 		// This needs to match config.cfg serverCommandPassword
-		serverPassword = "";
+		serverPassword = "27091995";
 
 		// Autolocks server until its ready to accept players
 		useAutoLock = 0;
@@ -4117,7 +4117,7 @@ class CfgSettings
 			{4, 0} = Every 4 hours
 			{1, 30} = Every one and a half hour (who the hell would do this?)
 		*/
-		restartTimer[] = {3, 0};
+		restartTimer[] = {4, 0};
 
 		/*
 			Kicks players before restart to prevent gear loss.
@@ -4173,10 +4173,7 @@ class CfgSettings
 
 		devs[] = 
 		{
-			"76561197985241690", // Eichi
-			"76561198022879703", // Grim
-			"76561197968999666", // Mr.White^ex
-			"76561198075905447"  // Vishpala
+			"76561198065694695"//Mateuus
 		};
 	};
 
