@@ -81,7 +81,6 @@ enableDebugConsole = 1; // 2 = dangerous in MP
 allowFunctionsRecompile = 0;
 
 #include "config.cpp"
-#include "infiSTAR_Exile_AdminMenu.hpp"
 #include "CfgRemoteExec.hpp"
 
 class RscTitles
