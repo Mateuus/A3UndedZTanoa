@@ -82,7 +82,6 @@ allowFunctionsRecompile = 0;
 
 #include "config.cpp"
 #include "CfgRemoteExec.hpp"
-#include "infiSTAR_Exile_AdminMenu.hpp"
 #include "R3F_LOG\desc_include.h"
 #include "sounds\defines.hpp"
 #include "scarCODE\ServerInfoMenu\hpp\CfgServerInfoMenu.hpp"
