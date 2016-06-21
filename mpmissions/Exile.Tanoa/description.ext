@@ -1,17 +1,16 @@
-#include "infiSTAR_Exile_AdminMenu.hpp"
 // https://community.bistudio.com/wiki/Description.ext#forceRotorLibSimulation
 forceRotorLibSimulation = 2;
 
 // https://community.bistudio.com/wiki/Description.ext#disableChannels
 disableChannels[] = {0, 2};
 
-author = "Exile Mod Team";
-loadScreen = "exile_assets\texture\mod\logo.paa"; 
-onLoadMission= "www.exilemod.com";
+author = "BanterGaming";
+loadScreen = "images\loadingscreen.paa"; 
+onLoadMission= "www.bantergaming.co.uk";
 OnLoadIntro = "";
 OnLoadIntroTime = false;
 OnLoadMissionTime = false;
-onLoadName = "Exile Mod";
+onLoadName = "Exile Tanoa";
 
 class Header
 {
@@ -76,25 +75,78 @@ allowFunctionsLog = 1;
 // 0 = Default behavior, available only in editor
 // 1 = Available in SP and for hosts / logged in admins
 // 2 = Available for everyone
-enableDebugConsole = 0; // 2 = dangerous in MP
+enableDebugConsole = 1; // 2 = dangerous in MP
 
 // NO NO NO
 allowFunctionsRecompile = 0;
 
 #include "config.cpp"
+#include "infiSTAR_Exile_AdminMenu.hpp"
+#include "CfgRemoteExec.hpp"
 
-class CfgRemoteExec
+class RscTitles
 {
-    class Functions
-    {
-        mode = 1;
-        jip = 0;
-		class fnc_AdminReq { allowedTargets=2; };
-        class ExileServer_system_network_dispatchIncomingMessage     { allowedTargets=2; };
-    };
-    class Commands
-    {
-		mode=0;
-		jip=0;
-    };
+	#include "addons\statusBar\statusBar.hpp"
+	#include "custom\logo.hpp"
+	
 };
+
+class CfgNotifications
+{
+  class Success
+  {
+      description = "%1";
+      title = "Success";
+      iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+      iconText = "";
+      color[] = {0.7, 0.93, 0, 1};
+      duration = 5;
+      priority = 0;
+      difficulty[] = {};
+  };
+  class Whoops
+  {
+      description = "%1";
+      title = "Error";
+      iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+      iconText = "";
+      color[] = {0.7, 0.93, 0, 1};
+      duration = 5;
+      priority = 0;
+      difficulty[] = {};
+  };
+	class ZCP_Init
+	{
+			description = "%1";
+			title = "ZCP Spawned";
+			iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+			iconText = "";
+			color[] = {0.7, 0.93, 0, 1};
+			duration = 5;
+			priority = 0;
+			difficulty[] = {};
+	};
+	class ZCP_Capped
+	{
+		description = "%1";
+		title = "ZCP Capped";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		iconText = "";
+		color[] = {0.7, 0.93, 0, 1};
+		duration = 5;
+		priority = 0;
+		difficulty[] = {};
+	};
+	class ZCP_Capping
+	{
+		description = "%1";
+		title = "ZCP alert";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		iconText = "";
+		color[] = {0.7, 0.93, 0, 1};
+		duration = 5;
+		priority = 0;
+		difficulty[] = {};
+	};
+};
+
