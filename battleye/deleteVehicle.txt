@@ -1,2 +1,3 @@
 //new
 7 "" !"NVG_Target" !"Shot" !"_Preview"
+!"Alsatian_Random_F"!"Alsatian_Sandblack_F"!"Alsatian_Black_F"!"Alsatian_Sand_F"!"Fin_tricolour_F"!"Fin_ocherwhite_F"

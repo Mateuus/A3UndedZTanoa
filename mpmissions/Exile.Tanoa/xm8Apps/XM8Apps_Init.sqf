@@ -21,85 +21,97 @@ If you want to change what button the XM8 Apps appears on edit ExileClient_gui_x
 
 
 //App 1
-_app1Text = "Selfie Cam";
-_app1Logo = "xm8Apps\images\Selfie.paa";
+_app1Text = "Recipes";
+_app1Logo = "xm8Apps\BRAmaRecipes\BRAma.paa";
 app1_action = {
-execVM"xm8Apps\selfie.sqf";
+
+execVM "xm8Apps\BRAmaRecipes\init.sqf";
 
 };
 
 //App 2
 _app2Text = "View Distance";
-_app2Logo = "xm8Apps\images\View.paa";
+_app2Logo = getText (configfile >> "CfgWeapons" >> "Binocular" >> "picture");
 app2_action = {
-execVM"xm8Apps\ViewDistance.sqf";
+
+  execVM "xm8Apps\Apps\View Distance\VeiwDistance.sqf";
+  
 };
 
 //App 3
-_app3Text = "Server Info";
-_app3Logo = "xm8Apps\images\lightbulb.paa";
+_app3Text = "XM8Security";
+_app3Logo = "xm8Apps\ExileSecurity\Images\ExileSecurity.paa";
 app3_action = {
-execVM"xm8Apps\InfoPage.sqf";
 
+  [] spawn ExileSecurity_Territory
+  
 };
-//App 4
-_app4Text = "Player Stats";
-_app4Logo = "xm8Apps\images\Stats_IconWhite.paa";
+
+//App 4 
+_app4Text = "Base Locator";
+_app4Logo = "";
 app4_action = {
-execVM"xm8Apps\PlayerStats.sqf";
-
+[] execVM "xm8Apps\apps\BaseMarker\basemarker.sqf";
 };
 
-//App 5
-_app5Text = "Crafting Recipes";
-_app5Logo = "xm8Apps\images\BRAma.paa";
-app5_action = {
-execVM"xm8Apps\Recipes.sqf";
-
+//App 5 
+_app5Text = "Apoc's Airdrop";
+  _app5Logo = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\supplydrop_ca.paa";
+  app5_action = {
+  execVM "xm8Apps\Apps\APOC_Airdrop_Assistance\APOC_Airdrop_Assistance_XM8.sqf";
 };
 
 //App 6
-_app6Text = "Base Location";
-_app6Logo = "xm8Apps\images\basemarker.paa";
+_app6Text = "Base Locator";
+_app6Logo = "\exile_assets\texture\ui\snap_blue_ca.paa";
 app6_action = {
-execVM"xm8Apps\basemarker.sqf";
+	private ["_position"];
+	_position = getPosATL player;
+	[_position] execVM "xm8Apps\Apps\Build Here\build_here.sqf";
 
 };
 
 //App 7
-_app7Text = "Coming Soon";
-_app7Logo = "";
-app7_action = {
-
+_app7Text = "Call dog";
+_app7Logo = "xm8Apps\Apps\CallPet\Call_Pet.paa";
+app7_action = 
+{
+  execVM "callDog.sqf";
 };
 
-
-
 //App 8
-_app8Text = "Coming Soon!";
-_app8Logo = "";
-app8_action = {
-
+_app8Text = "Hide dog";
+_app8Logo = "xm8Apps\Apps\PetAway\Pet_Away.paa";
+app8_action = 
+{
+  execVM "dogAway.sqf";  
 };
 
 //App 9
-_app9Text = "Coming Soon";
-_app9Logo = "";
+_app9Text = "Deploy Bike";
+_app9Logo = "\dbo\dbo_old_bike\data\icon_mmt_ca.paa";
 app9_action = {
+
+execVM "xm8Apps\Apps\Deploy Bike\DeployBike.sqf";
 
 };
 
 //App 10
-_app10Text = "Coming Soon";
+_app10Text = "Attach Chemlight";
 _app10Logo = "";
-app10_action = {
+app10_action = 
+{
 
+ execVM "xm8Apps\Apps\AttachChemApp\attachChemLight.sqf";
+ 
 };
 
 //App 11
-_app11Text = "Coming Soon";
-_app11Logo = "";
+_app11Text = "Server Info";
+_app11Logo = "\exile_assets\texture\ui\xm8_app_cosa_nostra_ca.paa";
 app11_action = {
+
+createDialog "RscDisplayServerInfoMenu";
 
 };
 

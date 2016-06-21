@@ -73,7 +73,7 @@ disableSerialization;
 		_dir = round (getDir (vehicle player));
 		_grid = mapGridPosition  player; _xx = (format[_grid]) select  [0,3]; 
 		_yy = (format[_grid]) select  [3,3];  
-		_time = (round(180-(serverTime)/60));  //edit the '240' value (60*4=240) to change the countdown timer if your server restarts are shorter or longer than 4 hour intervals
+		_time = (round(240-(serverTime)/60));  //edit the '240' value (60*4=240) to change the countdown timer if your server restarts are shorter or longer than 4 hour intervals
 		_hours = (floor(_time/60));
 		_minutes = (_time - (_hours * 60));
 		
@@ -109,6 +109,7 @@ disableSerialization;
 		if((_damage >= 10) && (_damage < 20)) then {_colourDamage =  _colour10;};
 		if((_damage >= 1) && (_damage < 10)) then {_colourDamage =  _colour0;};
 		if(_damage < 1) then{_colourDamage =  _colourDead;};
+		
 		
 		
 		
@@ -167,18 +168,17 @@ disableSerialization;
 		//Stamina
 		_colourStamina = _colourDefault;
 		
+		
 		//display the information 
 		((uiNamespace getVariable "osefStatusBarAdmin")displayCtrl 55554)ctrlSetStructuredText parseText 
 			format["
-			<t shadow='1' shadowColor='#000000' color='%10'><img size='1.6'  shadowColor='#000000' image='addons\statusbar\icons\players.paa' color='%10'/> %2</t>
-			<t shadow='1' shadowColor='#000000' color='%11'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\health.paa' color='%11'/> %3%1</t> 
-			<t shadow='1' shadowColor='#000000' color='%10'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\poptab_ca.paa' color='%10'/> %4</t> 
-			<t shadow='1' shadowColor='#000000' color='%12'><img size='1.6'  shadowColor='#000000' image='addons\statusbar\icons\hunger.paa' color='%12'/> %5%1</t> 
-			<t shadow='1' shadowColor='#000000' color='%13'><img size='1.6'  shadowColor='#000000' image='addons\statusbar\icons\thirst.paa' color='%13'/> %6%1</t> 
-			<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\exile.paa' color='%10'/> %9</t> 
+			<t shadow='1' shadowColor='#000000' color='%10'><img size='1.6'  shadowColor='#000000' image='addons\statusBar\icons\players.paa' color='%10'/> %2</t>
+			<t shadow='1' shadowColor='#000000' color='%11'><img size='1.0'  shadowColor='#000000' image='addons\statusBar\icons\health.paa' color='%11'/> %3%1</t>
+			<t shadow='1' shadowColor='#000000' color='%10'><img size='1.0'  shadowColor='#000000' image='addons\statusBar\icons\poptab_ca.paa' color='%10'/> %4</t> 
+			<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='addons\statusBar\icons\exile.paa' color='%10'/> %9</t> 
 			<t shadow='1' shadowColor='#000000' color='%10'>FPS: %7</t>
-			<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\compass.paa' color='%10'/> %17</t> 
-			<t shadow='1' shadowColor='#000000' color='%10'><img size='1.6'  shadowColor='#000000' image='addons\statusbar\icons\restart.paa' color='%10'/>%18:%19</t>",
+			<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='addons\statusBar\icons\compass.paa' color='%10'/> %17</t> 
+			<t shadow='1' shadowColor='#000000' color='%10'><img size='1.0'  shadowColor='#000000' image='addons\statusBar\icons\restart.paa' color='%10'/> %18:%19</t>",
 			
 					"%", 
 					count playableUnits,
@@ -198,7 +198,7 @@ disableSerialization;
 					format["%1/%2",_xx,_yy], 
 					_dir,
 					_hours,
-					_minutes					 
+					_minutes
 				];
 		
 		}; 

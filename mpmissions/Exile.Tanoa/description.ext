@@ -4,19 +4,19 @@ forceRotorLibSimulation = 2;
 // https://community.bistudio.com/wiki/Description.ext#disableChannels
 disableChannels[] = {0, 2};
 
-author = "BanterGaming";
-loadScreen = "images\loadingscreen.paa"; 
-onLoadMission= "www.bantergaming.co.uk";
+author = "Exile Mod Team";
+loadScreen = "img\logo.jpg";
+onLoadMission= "www.exilemod.com";
 OnLoadIntro = "";
 OnLoadIntroTime = false;
 OnLoadMissionTime = false;
-onLoadName = "Exile Tanoa";
+onLoadName = "Exile Mod";
 
 class Header
 {
 	gameType = Sandbox;
 	minPlayers = 1;
-	maxPlayers = 100;
+	maxPlayers = 30;
 };
 
 // DO NOT CHANGE THIS! +
@@ -33,7 +33,7 @@ showHUD[] =
 };
 
 respawn = "BASE";
-respawnDelay = 120;
+respawnDelay = 300;
 respawnDialog = 0;
 respawnOnStart = 0;
 respawnButton = 1; 
@@ -75,77 +75,40 @@ allowFunctionsLog = 1;
 // 0 = Default behavior, available only in editor
 // 1 = Available in SP and for hosts / logged in admins
 // 2 = Available for everyone
-enableDebugConsole = 1; // 2 = dangerous in MP
+enableDebugConsole = 0; // 2 = dangerous in MP
 
 // NO NO NO
 allowFunctionsRecompile = 0;
 
 #include "config.cpp"
 #include "CfgRemoteExec.hpp"
+#include "R3F_LOG\desc_include.h"
+#include "sounds\defines.hpp"
+#include "scarCODE\ServerInfoMenu\hpp\CfgServerInfoMenu.hpp"
+#include "scarCODE\ServerInfoMenu\hpp\RscDisplayServerInfoMenu.hpp"
+#include "VirtualGarage\Dialog\VirtualGarage_Client_Defines.hpp"
+#include "VirtualGarage\Dialog\VirtualGarage_Client_Dialog.hpp"
+#include "MostWanted_Client\Dialog\MostWantedDefines.hpp"
+#include "MostWanted_Client\Dialog\MostWantedDialog.hpp"
+#include "MarXet\dialog\RscMarXetDefines.hpp"
+#include "MarXet\dialog\RscMarXetDialog.hpp"
+
 
 class RscTitles
 {
 	#include "addons\statusBar\statusBar.hpp"
-	#include "custom\logo.hpp"
-	
+	#include "custom\watermark\logo.hpp"
+	#include "VEMFr_client\gui\RscDisplayVEMFrClient.hpp"
 };
 
-class CfgNotifications
+class CfgHints
 {
-  class Success
-  {
-      description = "%1";
-      title = "Success";
-      iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
-      iconText = "";
-      color[] = {0.7, 0.93, 0, 1};
-      duration = 5;
-      priority = 0;
-      difficulty[] = {};
-  };
-  class Whoops
-  {
-      description = "%1";
-      title = "Error";
-      iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
-      iconText = "";
-      color[] = {0.7, 0.93, 0, 1};
-      duration = 5;
-      priority = 0;
-      difficulty[] = {};
-  };
-	class ZCP_Init
-	{
-			description = "%1";
-			title = "ZCP Spawned";
-			iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
-			iconText = "";
-			color[] = {0.7, 0.93, 0, 1};
-			duration = 5;
-			priority = 0;
-			difficulty[] = {};
-	};
-	class ZCP_Capped
-	{
-		description = "%1";
-		title = "ZCP Capped";
-		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
-		iconText = "";
-		color[] = {0.7, 0.93, 0, 1};
-		duration = 5;
-		priority = 0;
-		difficulty[] = {};
-	};
-	class ZCP_Capping
-	{
-		description = "%1";
-		title = "ZCP alert";
-		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
-		iconText = "";
-		color[] = {0.7, 0.93, 0, 1};
-		duration = 5;
-		priority = 0;
-		difficulty[] = {};
-	};
+    #include "MostWanted_Client\Notifications.hpp"
+	#include "MarXet\CfgMarXetHints.hpp"
+};
+
+class CfgFunctions
+{
+    #include "ExAdClient\CfgFunctions.cpp"
 };
 
